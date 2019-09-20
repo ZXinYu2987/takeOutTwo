@@ -6,15 +6,17 @@
     <meta name="keywords" content="DeathGhost,DeathGhost.cn,web前端设,移动WebApp开发" />
     <meta name="description" content="DeathGhost.cn::H5 WEB前端设计开发!" />
     <meta name="author" content="DeathGhost"/>
-    <link href="style/style.css" rel="stylesheet" type="text/css" />
-    <!--引入CSS-->
     <script type="text/javascript" src="js/jquery-1.11.3.js"></script>
+    <!--引入CSS-->
     <link rel="stylesheet" type="text/css" href="webuploader-0.1.5/webuploader.css">
     <link href="webuploader-0.1.5/style.css" type="text/css" rel="stylesheet"/>
-    <script type="text/javascript" src="js/public.js"></script>
-    <script type="text/javascript" src="js/jqpublic.js"></script>
     <!--引入JS-->
     <script type="text/javascript" src="webuploader-0.1.5/webuploader.js"></script>
+
+    <link href="style/style.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="js/public.js"></script>
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/jqpublic.js"></script>
     <!--
     Author: DeathGhost
     Author URI: http://www.deathghost.cn

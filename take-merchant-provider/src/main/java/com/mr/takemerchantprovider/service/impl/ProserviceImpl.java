@@ -2,6 +2,7 @@ package com.mr.takemerchantprovider.service.impl;
 
 import com.mr.take.common.DataGridVO;
 import com.mr.take.domain.Merchant;
+import com.mr.take.domain.Store;
 import com.mr.takemerchantprovider.mapper.ProviderMapper;
 import com.mr.takemerchantprovider.service.ProService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,12 +25,13 @@ public class ProserviceImpl implements ProService {
     }
 
     @Override
-    public DataGridVO queryMerList() {
-        int total=merchantMapper.queryCount();
+    public List<Merchant>  queryMerList() {
         List<Merchant> merchantList=merchantMapper.queryMerList();
-        DataGridVO dgv=new DataGridVO();
-        dgv.setRows(merchantList);
-        dgv.setTotal(total);
-        return dgv;
+        return merchantList;
+    }
+
+    @Override
+    public Store queryStortById(Integer mid) {
+        return merchantMapper.queryStortById(mid);
     }
 }

@@ -7,18 +7,21 @@
 -->
 <mapper namespace="com.mr.takemerchantprovider.mapper.ProviderMapper">
 
+
+
+
     <insert id="saveMerchant" parameterType="com.mr.take.domain.Merchant">
         insert into t_merchant values(#{mid},#{shopName},#{mdate},#{mcode},#{mname},#{mphone},#{murl});
     </insert>
-
-    <!--查询总条数-->
-    <select id="queryCount" resultType="int">
-        select count(*) from t_merchant
-    </select>
 
     <!--查询总信息-->
     <select id="queryMerList" resultType="com.mr.take.domain.Merchant">
         select * from t_merchant
     </select>
 
+    <!--根据商家id查询店铺表-->
+   <!-- <select id="queryStortById" parameterType="int" resultMap="stort">
+        select s.* from t_store s LEFT JOIN t_connect c on s.sid=c.sid LEFT JOIN t_merchant m ON m.mid=c.mid where mid=#{mid}
+    </select>
+-->
 </mapper>

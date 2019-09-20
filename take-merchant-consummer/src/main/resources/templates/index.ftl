@@ -6,11 +6,8 @@
     <meta name="keywords" content="DeathGhost,DeathGhost.cn,web前端设,移动WebApp开发" />
     <meta name="description" content="DeathGhost.cn::H5 WEB前端设计开发!" />
     <meta name="author" content="DeathGhost"/>
-    <link rel="stylesheet" type="text/css" href="jquery-easyui-1.5.4.2/themes/default/easyui.css">
-    <link rel="stylesheet" type="text/css" href="jquery-easyui-1.5.4.2/themes/icon.css">
-    <script type="text/javascript" src="jquery-easyui-1.5.4.2/jquery.min.js"></script>
-    <script type="text/javascript"src="jquery-easyui-1.5.4.2/jquery.easyui.min.js"></script>
-    <script type="text/javascript"src="jquery-easyui-1.5.4.2/locale/easyui-lang-zh_CN.js"></script>
+
+    <script type="text/javascript" src="js/jquery-1.11.3.js"></script>
     <!--引入CSS-->
     <link rel="stylesheet" type="text/css" href="webuploader-0.1.5/webuploader.css">
     <link href="webuploader-0.1.5/style.css" type="text/css" rel="stylesheet"/>
@@ -38,7 +35,7 @@
                 <a href="register.html">注册</a>/<a href="login.html">登录</a><a href="#">QQ客服</a><a href="#">微信客服</a><a href="#">手机客户端</a>
             </div>
             <div class="RightNav">
-                <a href="user_center.html">用户中心</a> <a href="user_orderlist.html" target="_blank" title="我的订单">我的订单</a> <a href="cart.html">购物车（0）</a> <a href="user_favorites.html" target="_blank" title="我的收藏">我的收藏</a> <a href="/merchantFun">商家入驻</a>
+                <a href="user_center.html">用户中心</a> <a href="user_orderlist.html" target="_blank" title="我的订单">我的订单</a> <a href="cart.html">购物车（0）</a> <a href="user_favorites.html" target="_blank" title="我的收藏">我的收藏</a> <a href="merchantFun">商家入驻</a>
             </div>
         </div>
     </section>
@@ -162,7 +159,7 @@
                             <a href="#">周至县</a>
                             <a href="#">蓝田县 </a>
                         </p>
-                       <#-- <div class="SCcontent">
+          <#--              <div class="SCcontent">
                             <a href="detailsp.html" target="_blank" title="菜品名称">
                                 <figure>
                                     <img src="upload/05.jpg">
@@ -191,17 +188,15 @@
                                 </figure>
                             </a>
                         </div>-->
+                        <#--list-->
                         <div class="bestshop">
-                            <table class="easyui-datagrid" style="width:400px;height:250px"
-                                   data-options="url:'/queryMerchant',fitColumns:true,singleSelect:true">
-                                <thead>
-                                <tr>
-                                    <th data-options="field:'murl',width:100,formatter:showPic"></th>
-                                </tr>
-                                </thead>
-                            </table>
-
-
+                            <#list list as lUrl>
+                                <a href="toShop?mid=${lUrl.mid}"  title="${lUrl}">
+                                    <figure>
+                                        <img src="showPic?path=${lUrl.murl}">
+                                    </figure>
+                                </a>
+                            </#list>
                         </div>
                     </li>
                 </ul>
@@ -359,14 +354,5 @@
     </section>
     <div class="copyright">© 版权所有 2016 DeathGhost 技术支持：<a href="http://www.deathghost.cn" title="DeathGhost">DeathGhost</a></div>
 </footer>
-<script>
-    //展示图片
-    function showPic(value,rows,index) {
-        console.log(value);
-        //console.log(rows.murl);
-      return "<img src='/showPic?path='+value alt='图片为加载' width='100px'>"
-    }
-
-</script>
 </body>
 </html>
