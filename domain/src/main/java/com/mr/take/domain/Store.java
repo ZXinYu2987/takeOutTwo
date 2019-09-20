@@ -31,4 +31,10 @@ public class Store {
 
     //商铺图片
     private String surl;
+
+    //商家外键
+    private Integer mid;
+
+    //商家注入表
+    private Merchant merchant;
 }

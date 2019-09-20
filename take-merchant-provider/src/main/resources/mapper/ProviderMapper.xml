@@ -7,7 +7,25 @@
 -->
 <mapper namespace="com.mr.takemerchantprovider.mapper.ProviderMapper">
 
-
+    <resultMap id="store" type="com.mr.take.domain.Store">
+        <id column="sid" javaType="sid"/>
+        <result column="saddress" javaType="saddress"/>
+        <result column="sphone" javaType="sphone"/>
+        <result column="sdishes" javaType="sdishes"/>
+        <result column="sdateB" javaType="sdateB"/>
+        <result column="sdateE" javaType="sdateE"/>
+        <result column="surl" javaType="surl"/>
+        <result column="mid" javaType="mid"/>
+        <collection property="merchant" javaType="com.mr.take.domain.Merchant">
+            <id column="mid" javaType="mid"/>
+            <result  column="shopName" javaType="shopName"/>
+            <result  column="mdate" javaType="mdate"/>
+            <result  column="mcode" javaType="mcode"/>
+            <result  column="mname" javaType="mname"/>
+            <result  column="mphone" javaType="mphone"/>
+            <result  column="murl" javaType="murl"/>
+        </collection>
+    </resultMap>
 
 
     <insert id="saveMerchant" parameterType="com.mr.take.domain.Merchant">
@@ -20,8 +38,8 @@
     </select>
 
     <!--根据商家id查询店铺表-->
-   <!-- <select id="queryStortById" parameterType="int" resultMap="stort">
-        select s.* from t_store s LEFT JOIN t_connect c on s.sid=c.sid LEFT JOIN t_merchant m ON m.mid=c.mid where mid=#{mid}
+   <select id="queryStortById" parameterType="int" resultMap="stort">
+        select s.* from t_store s LEFT JOIN t_merchant m ON m.mid=s.mid where mid=#{mid}
     </select>
--->
+
 </mapper>
