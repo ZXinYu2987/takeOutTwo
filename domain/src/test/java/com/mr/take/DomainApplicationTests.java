@@ -1,4 +1,4 @@
-package com.mr.take.domain;
+package com.mr.take;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

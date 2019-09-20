@@ -1,4 +1,4 @@
-package com.mr.take.domain;
+package com.mr.take;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
